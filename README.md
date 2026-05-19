@@ -18,9 +18,10 @@ Original Songs by A.K Power listen and download for free (Enjoy!!!)
   <script>
     // List your files here. Add/remove lines as you upload more.
     const songs = [
-      "song1.mp3",
-      "song2.mp3", 
-      "song3.mp3"
+      "Winning it by A.K Power.mp3",
+      "I Repent by A.K Power (1).mp3", 
+      "I WON'T LOSE IT BY A.K POWER (Remix).mp3",
+      "Petite Voleur by Thanielan ft Ak power(Remix).mp3",
     ];
 
     const playlistDiv = document.getElementById("playlist");
