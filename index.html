@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A.KPower Songs</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: #fff; }
+    h1 { text-align: center; }
+    .track { margin: 15px 0; padding: 10px; background: #222; border-radius: 8px; }
+    audio { width: 100%; }
+  </style>
+</head>
+<body>
+  <h1>A.KPower - Original Songs</h1>
+  <p style="text-align:center;">Listen and download for free (Enjoy!!!)</p>
+  <div id="playlist"></div>
+
+  <script>
+    const songs = [
+      "Winning it by A.K Power.mp3",
+      "I Repent by A.K Power (1).mp3", 
+      "I WON'T LOSE IT BY A.K POWER (Remix).mp3",
+      "I'll try by AK power.mp3",
+      "Petite Voleur by Thanielan ft Ak power(Remix).mp3",
+      "I'm suffocating by A.K Power.mp3",
+      "On Holidays by Caro ft. AK power.mp3",
+      "Something Wild by AK Power.mp3",
+      "We rolling (drill Version) by Kwesi Ayitey.mp3"
+    ];
+
+    const playlistDiv = document.getElementById("playlist");
+
+    songs.forEach(file => {
+      const name = file.replace(".mp3", "").replace(/[-_]/g, " ");
+      
+      const trackDiv = document.createElement("div");
+      trackDiv.className = "track";
+      
+      trackDiv.innerHTML = `
+        <h3>${name}</h3>
+        <audio controls>
+          <source src="${file}" type="audio/mpeg">
+        </audio>
+      `;
+      
+      playlistDiv.appendChild(trackDiv);
+    });
+  </script>
+</body>
+</html>
