@@ -21,7 +21,12 @@ Original Songs by A.K Power listen and download for free (Enjoy!!!)
       "Winning it by A.K Power.mp3",
       "I Repent by A.K Power (1).mp3", 
       "I WON'T LOSE IT BY A.K POWER (Remix).mp3",
+      "I'll try by AK power .mp3 ,
       "Petite Voleur by Thanielan ft Ak power(Remix).mp3",
+      "I'm suffocating by A.K Power.mp3 ,
+      "On Holidays by Caro ft. AK power .mp3 ,
+      "Something Wild by AK Power.mp3 ,
+      "We rolling (drill Version) by Kwesi Ayitey.
     ];
 
     const playlistDiv = document.getElementById("playlist");
