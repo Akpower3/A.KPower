@@ -1,50 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>A.KPower Songs</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #111; color: #fff; }
-    h1 { text-align: center; }
-    .track { margin: 15px 0; padding: 10px; background: #222; border-radius: 8px; }
-    audio { width: 100%; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mighty Track Album</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #0b0b0e 0%, #14141c 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        /* Catchy metallic gold headline gradient */
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            background: linear-gradient(45deg, #ffb300, #f77737);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: #a0a0aa;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .music-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .track-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 20px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 320px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .track-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 179, 0, 0.15);
+            border-color: rgba(255, 179, 0, 0.4);
+        }
+
+        /* Styled box for album art */
+        .album-art {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background-color: #27272a;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+
+        .track-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        .track-card p {
+            margin: 0 0 15px 0;
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        audio {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .download-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(135deg, #ffb300 0%, #e69500 100%);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.2);
+        }
+
+        .download-btn:hover {
+            background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+        }
+    </style>
 </head>
 <body>
-  <h1>A.KPower - Original Songs</h1>
-  <p style="text-align:center;">Listen and download for free (Enjoy!!!)</p>
-  <div id="playlist"></div>
 
-  <script>
-    const songs = [
-      "Winning it by A.K Power.mp3",
-      "I Repent by A.K Power (1).mp3", 
-      "I WON'T LOSE IT BY A.K POWER (Remix).mp3",
-      "I'll try by AK power .mp3",
-      "Petite Voleur by Thanielan ft Ak power(Remix).mp3",
-      "I'm suffocating by A.K Power.mp3",
-      "On Holidays by Caro ft. AK power .mp3",
-      "Something Wild by AK Power.mp3",
-      "We rolling (drill Version) by Kwesi Ayitey.mp3"
-  
-    ];
+    <h1>Mighty Track Album</h1>
+    <p class="subtitle">Stream and download the official tracks below</p>
 
-    const playlistDiv = document.getElementById("playlist");
+    <div class="music-container">
 
-    songs.forEach(file => {
-      const name = file.replace(".mp3", "").replace(/[-_]/g, " ");
-      
-      const trackDiv = document.createElement("div");
-      trackDiv.className = "track";
-      
-      trackDiv.innerHTML = `
-        <h3>${name}</h3>
-        <audio controls>
-          <source src="${file}" type="audio/mpeg">
-        </audio>
-      `;
-      
-      playlistDiv.appendChild(trackDiv);
-    });
-  </script>
+        <!-- Track 1 Card -->
+        <div class="track-card">
+            <!-- Replace 'images/cover1.jpg' with your actual cover art image path later -->
+            <img src="images/cover1.jpg" alt="Album Art" class="album-art">
+            <h3>Song Title 1</h3>
+            <p>Artist Name</p>
+            <audio controls>
+                <source src="audio/song1.mp3" type="audio/mpeg">
+            </audio>
+            <a href="audio/song1.mp3" download class="download-btn">Download MP3</a>
+        </div>
+
+        <!-- Track 2 Card -->
+        <div class="track-card">
+            <img src="images/cover2.jpg" alt="Album Art" class="album-art">
+            <h3>Song Title 2</h3>
+            <p>Artist Name</p>
+            <audio controls>
+                <source src="audio/song2.mp3" type="audio/mpeg">
+            </audio>
+            <a href="audio/song2.mp3" download class="download-btn">Download MP3</a>
+        </div>
+
+    </div>
+
 </body>
 </html>
