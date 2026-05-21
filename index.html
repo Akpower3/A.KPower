@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mighty Track Album</title>
+    <title>Original Songs of A.K Power</title>
     <style>
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -15,6 +15,7 @@
             min-height: 100vh;
         }
 
+        /* Main Heading Styling */
         h1 {
             font-size: 2.8rem;
             margin-bottom: 5px;
@@ -25,21 +26,45 @@
             text-transform: uppercase;
         }
 
+        /* Two-line Subtitle Styling */
+        .subtitle-container {
+            margin-bottom: 50px;
+        }
+
         .subtitle {
             color: #a0a0aa;
             font-size: 1.1rem;
-            margin-bottom: 40px;
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        /* Album Section Layout */
+        .album-section {
+            margin-bottom: 60px;
+        }
+
+        .album-heading {
+            font-size: 1.8rem;
+            color: #ffb300;
+            text-align: left;
+            max-width: 1000px;
+            margin: 0 auto 20px auto;
+            border-bottom: 2px solid rgba(255, 179, 0, 0.2);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .music-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            justify-content: flex-start;
             gap: 25px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
+        /* Premium Track Card Box */
         .track-card {
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(12px);
@@ -48,7 +73,7 @@
             padding: 20px;
             border-radius: 20px;
             width: 100%;
-            max-width: 320px;
+            max-width: 310px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             text-align: left;
@@ -73,8 +98,11 @@
 
         .track-card h3 {
             margin: 0 0 5px 0;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .track-card p {
@@ -108,115 +136,148 @@
             transform: scale(1.02);
             box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
         }
+
+        /* Bottom Tribute Section */
+        .footer-tribute {
+            margin-top: 80px;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #71717a;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Mighty Track Album</h1>
-    <p class="subtitle"> by A.K Power stream and download the official tracks below for free </p> 
-    <p class="subtitle"> Listen, enjoy, and stay tuned for more </p>
+    <!-- Main Title Header -->
+    <h1>Original Songs of A.K Power</h1>
+    <div class="subtitle-container">
+        <p class="subtitle">Listen, enjoy and download for free.</p>
+        <p class="subtitle">Stay tuned for more.</p>
+    </div>
 
-    <div class="music-container">
+    <!-- ALBUM SECTION 1: Mighty Track -->
+    <div class="album-section">
+        <h2 class="album-heading">Mighty Track</h2>
+        <div class="music-container">
+            
+            <!-- Track 1 Card -->
+            <div class="track-card">
+                <img src="images/cover1.png" alt="Album Art" class="album-art">
+                <h3>Winning it</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="Winning-it.mp3" type="audio/mpeg">
+                </audio>
+                <a href="Winning-it.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 1 Card -->
-        <div class="track-card">
-            <img src="images/cover1.jpg" alt="Album Art" class="album-art">
-            <h3>Winning it</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="Winning-it.mp3" type="audio/mpeg">
-            </audio>
-            <a href="Winning-it.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 2 Card -->
+            <div class="track-card">
+                <img src="images/cover2.png" alt="Album Art" class="album-art">
+                <h3>I Repent</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="i-repent.mp3" type="audio/mpeg">
+                </audio>
+                <a href="i-repent.mp3" download class="download-btn">Download MP3</a>
+            </div>
+            
+            <!-- Track 3 Card -->
+            <div class="track-card">
+                <img src="images/cover3.png" alt="Album Art" class="album-art">
+                <h3>I'll try</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="i'll-try.mp3" type="audio/mpeg">
+                </audio>
+                <a href="i'll-try.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 2 Card -->
-        <div class="track-card">
-            <img src="images/cover2.jpg" alt="Album Art" class="album-art">
-            <h3>I Repent</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="i-repent.mp3" type="audio/mpeg">
-            </audio>
-            <a href="i-repent.mp3" download class="download-btn">Download MP3</a>
-        </div>
-        
-       <!-- Track 3 Card -->
-        <div class="track-card">
-            <img src="images/cover3.jpg" alt="Album Art" class="album-art">
-            <h3>I'll try</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="i'll-try.mp3" type="audio/mpeg">
-            </audio>
-            <a href="i'll-try.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 4 Card -->
+            <div class="track-card">
+                <img src="images/cover4.png" alt="Album Art" class="album-art">
+                <h3>I won't lose it</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="i-won't-lose-it.mp3" type="audio/mpeg">
+                </audio>
+                <a href="i-won't-lose-it.mp3" download class="download-btn">Download MP3</a>
+            </div>
+            
+            <!-- Track 5 Card -->
+            <div class="track-card">
+                <img src="images/cover5.png" alt="Album Art" class="album-art">
+                <h3>I'm suffocating</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="i'm-suffocating.mp3" type="audio/mpeg">
+                </audio>
+                <a href="i'm-suffocating.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 4 Card -->
-        <div class="track-card">
-            <img src="images/cover4.jpg" alt="Album Art" class="album-art">
-            <h3>I won't lose it</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="i-won't-lose-it.mp3" type="audio/mpeg">
-            </audio>
-            <a href="i-won't-lose-it.mp3" download class="download-btn">Download MP3</a>
-        </div>
-        
-        <!-- Track 5 Card -->
-        <div class="track-card">
-            <img src="images/cover5.jpg" alt="Album Art" class="album-art">
-            <h3>I'm suffocating</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="i'm-suffocating.mp3" type="audio/mpeg">
-            </audio>
-            <a href="i'm-suffocating.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 6 Card -->
+            <div class="track-card">
+                <img src="images/cover6.png" alt="Album Art" class="album-art">
+                <h3>Petite Voleur</h3>
+                <p>Thanielan ft.Ak power</p>
+                <audio controls>
+                    <source src="petite-voleur-remix.mp3" type="audio/mpeg">
+                </audio>
+                <a href="petite-voleur-remix.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 6 Card -->
-        <div class="track-card">
-            <img src="images/cover6.jpg" alt="Album Art" class="album-art">
-            <h3>Petite Voleur</h3>
-            <p>Thanielan ft.Ak power</p>
-            <audio controls>
-                <source src="petite-voleur-remix.mp3" type="audio/mpeg">
-            </audio>
-            <a href="petite-voleur-remix.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 7 Card -->
+            <div class="track-card">
+                <img src="images/cover7.png" alt="Album Art" class="album-art">
+                <h3>On holidays</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="on-holidays.mp3" type="audio/mpeg">
+                </audio>
+                <a href="on-holidays.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 7 Card -->
-        <div class="track-card">
-            <img src="images/cover7.png" alt="Album Art" class="album-art">
-            <h3>On holidays</h3>
-            <p>Ak power ft.Caro</p>
-            <audio controls>
-                <source src="on-holidays.mp3" type="audio/mpeg">
-            </audio>
-            <a href="on-holidays.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 8 Card -->
+            <div class="track-card">
+                <img src="images/cover8.png" alt="Album Art" class="album-art">
+                <h3>Something wild</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="something-wild.mp3" type="audio/mpeg">
+                </audio>
+                <a href="something-wild.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 8 Card -->
-        <div class="track-card">
-            <img src="images/cover8.jpg" alt="Album Art" class="album-art">
-            <h3>Something wild</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="something-wild.mp3" type="audio/mpeg">
-            </audio>
-            <a href="something-wild.mp3" download class="download-btn">Download MP3</a>
-        </div>
+            <!-- Track 9 Card -->
+            <div class="track-card">
+                <img src="images/cover9.png" alt="Album Art" class="album-art">
+                <h3>We Rolling</h3>
+                <p>Ak power</p>
+                <audio controls>
+                    <source src="we-rolling-drill.mp3" type="audio/mpeg">
+                </audio>
+                <a href="we-rolling-drill.mp3" download class="download-btn">Download MP3</a>
+            </div>
 
-        <!-- Track 9 Card -->
-        <div class="track-card">
-            <img src="images/cover9.png" alt="Album Art" class="album-art">
-            <h3>We Rolling</h3>
-            <p>Ak power</p>
-            <audio controls>
-                <source src="we-rolling-drill.mp3" type="audio/mpeg">
-            </audio>
-            <a href="we-rolling-drill.mp3" download class="download-btn">Download MP3</a>
         </div>
+    </div>
 
+    <!-- ALBUM SECTION 2: name of another album -->
+    <div class="album-section">
+        <h2 class="album-heading">name of another album</h2> 
+        <div class="music-container">
+            
+            <p style="color: #71717a; padding-left: 20px; font-style: italic;">New album coming soon. Stay tuned!</p>
+
+        </div>
+    </div>
+
+    <!-- Bottom Tribute Line -->
+    <div class="footer-tribute">
+        Tribute to Elvis, Desmond, fio, Crankson and Caroline from Ayitey
     </div>
 
 </body>
