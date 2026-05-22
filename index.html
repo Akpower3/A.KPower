@@ -11,20 +11,6 @@
   gtag('config', 'G-F39K7QWD2J');
 </script>
 
-<!-- Custom Audio Tracker -->
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelectorAll('audio').forEach(player => {
-      player.addEventListener('play', (event) => {
-        let songName = event.target.src.split('/').pop(); 
-        gtag('event', 'song_played', {
-          'song_title': songName
-        });
-      });
-    });
-  });
-</script>
-    
     <meta name="google-site-verification" content="mFwR606hXXwz-ZSPnFJbOl8vk5wOYUS0NvqlURyRFzA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
