@@ -1,303 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F39K7QWD2J"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-F39K7QWD2J');
-</script>
-
     <meta name="google-site-verification" content="mFwR606hXXwz-ZSPnFJbOl8vk5wOYUS0NvqlURyRFzA" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Original Songs of A.K Power</title>
-
-    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
-    <meta name="google-site-verification" content="mFwR606hXXwz-ZSPnFJbOl8vk5wOYUS0NvqlURyRFzA" />
-
-    <!-- FREE GOOGLE SEARCH KEYWORDS (SEO) -->
-    <meta name="description" content="Stream and download original tracks by A.K Power including Winning it, I Repent, and the Mighty Track album for free.">
-    <meta name="keywords" content="A.K Power, AK Power, Mighty Track, Winning it, I Repent, download music free, original songs, hip hop, rap, stream music free">
-    <meta name="author" content="A.K Power">
-
     <style>
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #0b0b0e 0%, #14141c 100%);
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
-            margin: 0;
-            min-height: 100vh;
+        :root {
+            --bg-deep: #030712;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --border-color: rgba(255, 255, 255, 0.05);
+            --accent-yellow: #f59e0b;
+            --accent-blue: #3b82f6;
+            --text-main: #f9fafb;
+            --text-muted: #9ca3af;
         }
 
-        /* Main Heading Styling */
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-deep);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
+            color: var(--text-main);
+            text-align: center;
+            padding: 60px 20px;
+            margin: 0;
+            min-height: 100vh;
+            letter-spacing: -0.01em;
+        }
+
+        /* Luxury Header */
+        header {
+            max-width: 1100px;
+            margin: 0 auto 60px auto;
+        }
+
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 5px;
-            letter-spacing: -0.5px;
-            background: linear-gradient(45deg, #ffb300, #f77737);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 15px 0;
+            letter-spacing: -0.03em;
+            background: linear-gradient(135deg, #ffffff 30%, #93c5fd 70%, #fcd34d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
         }
 
-        /* Two-line Subtitle Styling */
-        .subtitle-container {
-            margin-bottom: 50px;
-        }
-
-        .subtitle {
-            color: #a0a0aa;
-            font-size: 1.1rem;
+        .subtitle-container p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
             margin: 5px 0;
-            line-height: 1.4;
+            font-weight: 400;
         }
 
-        /* Album Section Layout */
-        .album-section {
-            margin-bottom: 60px;
-        }
-
-        .album-heading {
-            font-size: 1.8rem;
-            color: #ffb300;
-            text-align: left;
-            max-width: 1000px;
-            margin: 0 auto 20px auto;
-            border-bottom: 2px solid rgba(255, 179, 0, 0.2);
-            padding-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .music-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            gap: 25px;
-            max-width: 1000px;
+        /* Container for the Downward Scrolling Architecture */
+        .discography-container {
+            max-width: 1100px;
             margin: 0 auto;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 40px; /* Spacing between albums as you scroll down */
+        }
+
+        /* Individual Album Container Block */
+        .album-wrapper {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 30px;
+            transition: border-color 0.3s ease;
+        }
+
+        .album-wrapper:focus-within, .album-wrapper:hover {
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        /* Album Header Banner inside the vertical layout */
+        .album-header-banner {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .album-banner-art {
+            width: 80px;
+            height: 80px;
+            background: #111827;
+            border-radius: 16px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
+        }
+
+        .album-banner-details h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .album-banner-details span {
+            font-size: 0.9rem;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* Clean Downward Music Grid System */
+        .music-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 25px;
         }
 
         /* Premium Track Card Box */
         .track-card {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 20px;
-            border-radius: 20px;
-            width: 100%;
-            max-width: 310px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            text-align: left;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            padding: 24px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
         }
 
         .track-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(255, 179, 0, 0.15);
-            border-color: rgba(255, 179, 0, 0.4);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        /* Highlight the active card playing audio */
+        .track-card.playing {
+            border-color: var(--accent-yellow) !important;
+            box-shadow: 0 30px 60px rgba(245, 158, 11, 0.12) !important;
+            background: rgba(245, 158, 11, 0.02);
         }
 
         .album-art {
             width: 100%;
             aspect-ratio: 1 / 1;
-            background-color: #27272a;
-            border-radius: 12px;
-            margin-bottom: 15px;
+            background-color: #0f172a;
+            border-radius: 16px;
+            margin-bottom: 20px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
         }
 
-        .track-card h3 {
-            margin: 0 0 5px 0;
-            font-size: 1.2rem;
+        .track-info h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.25rem;
+            font-weight: 600;
             color: #ffffff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
 
-        .track-card p {
-            margin: 0 0 15px 0;
-            color: #9ca3af;
+        .track-info p {
+            margin: 0 0 20px 0;
+            color: var(--text-muted);
             font-size: 0.95rem;
         }
 
         audio {
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
+        /* High-End Download Button Interaction */
         .download-btn {
             display: block;
             text-align: center;
-            padding: 12px;
-            background: linear-gradient(135deg, #ffb300 0%, #e69500 100%);
+            padding: 14px;
+            background: #ffffff;
             color: #000000;
             text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
+            border-radius: 30px;
+            font-weight: 600;
             font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 15px rgba(255, 179, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: auto;
         }
 
         .download-btn:hover {
-            background: linear-gradient(135deg, #ffc107 0%, #ffb300 100%);
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(255, 179, 0, 0.4);
+            background: var(--accent-yellow);
+            color: #000000;
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
 
-        /* Bottom Tribute Section */
-        .footer-tribute {
-            margin-top: 80px;
-            padding: 30px 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: #71717a;
-            font-size: 1rem;
-            letter-spacing: 1px;
+        /* Luxury Placeholder Box for Upcoming Albums */
+        .empty-state {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+        }
+
+        /* Bottom Minimalist Footer */
+        footer {
+            margin-top: 120px;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border-color);
+            color: #4b5563;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
             font-style: italic;
+        }
+
+        /* ADVANCED LYRICS VAULT SYSTEM */
+        .lyrics-vault {
+            max-width: 1100px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 40px;
+        }
+        .lyrics-vault h2 {
+            font-size: 2rem;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .song-lyrics-block {
+            margin-bottom: 45px;
+        }
+        .song-lyrics-block h4 {
+            color: #ffffff;
+            font-size: 1.35rem;
+            margin: 0 0 4px 0;
+            font-weight: 600;
+        }
+        .sleek-genre-badge {
+            font-size: 0.8rem;
+            color: var(--accent-yellow);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 14px;
+        }
+        .song-lyrics-block p {
+            color: var(--text-muted);
+            white-space: pre-line;
+            line-height: 1.6;
+            margin: 0;
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Main Title Header -->
-    <h1>Original Songs of A.K Power</h1>
-    <div class="subtitle-container">
-        <p class="subtitle">Listen, enjoy and download for free.</p>
-        <p class="subtitle">Stay tuned for more.</p>
-    </div>
-
-    <!-- ALBUM SECTION 1: Mighty Track -->
-    <div class="album-section">
-        <h2 class="album-heading">Mighty Track Album</h2>
-        <div class="music-container">
-            
-            <!-- Track 1 Card -->
-            <div class="track-card">
-                <img src="images/cover1.jpg" alt="Album Art" class="album-art">
-                <h3>Winning it</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="Winning-it_by_A.K-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="Winning-it_by_A.K-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 2 Card -->
-            <div class="track-card">
-                <img src="images/cover2.jpg" alt="Album Art" class="album-art">
-                <h3>I Repent</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="I-Repent_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="I-Repent_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-            
-            <!-- Track 3 Card -->
-            <div class="track-card">
-                <img src="images/cover3.jpg" alt="Album Art" class="album-art">
-                <h3>I'll try</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="I'll-try_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="I'll-try_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 4 Card -->
-            <div class="track-card">
-                <img src="images/cover4.jpg" alt="Album Art" class="album-art">
-                <h3>I won't lose it</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="I-won't-lose-it_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="I-won't-lose-it_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-            
-            <!-- Track 5 Card -->
-            <div class="track-card">
-                <img src="images/cover5.jpg" alt="Album Art" class="album-art">
-                <h3>I'm suffocating</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="I'm-suffocating_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="I'm-suffocating_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 6 Card -->
-            <div class="track-card">
-                <img src="images/cover6.jpg" alt="Album Art" class="album-art">
-                <h3>Petite Voleur</h3>
-                <p>Thanielan ft.Ak power</p>
-                <audio controls>
-                    <source src="Petite-Voleur_by_Thanielan_ft._Ak-Power_remix.mp3" type="audio/mpeg">
-                </audio>
-                <a href="Petite-Voleur_by_Thanielan_ft._Ak-Power_remix.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 7 Card -->
-            <div class="track-card">
-                <img src="images/cover7.png" alt="Album Art" class="album-art">
-                <h3>On Holidays</h3>
-                <p>Ak power ft.Caro</p>
-                <audio controls>
-                    <source src="On-Holidays_by_Ak-Power_ft._Caro.mp3" type="audio/mpeg">
-                </audio>
-                <a href="On-Holidays_by_Ak-Power_ft._Caro.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 8 Card -->
-            <div class="track-card">
-                <img src="images/cover8.jpg" alt="Album Art" class="album-art">
-                <h3>Something wild</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="Something-Wild_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="Something-Wild_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
-            <!-- Track 9 Card -->
-            <div class="track-card">
-                <img src="images/cover9.png" alt="Album Art" class="album-art">
-                <h3>We Rolling</h3>
-                <p>Ak power</p>
-                <audio controls>
-                    <source src="We-Rolling-drill_by_Ak-Power.mp3" type="audio/mpeg">
-                </audio>
-                <a href="We-Rolling-drill_by_Ak-Power.mp3" download class="download-btn">Download MP3</a>
-            </div>
-
+    <!-- Header Block -->
+    <header>
+        <h1>Original Songs of A.K Power</h1>
+        <div class="subtitle-container">
+            <p>Experience studio-grade productions directly from the source.</p>
+            <p>Listen and download premium assets freely.</p>
         </div>
-    </div>
+    </header>
 
-    <!-- ALBUM SECTION 2: name of another album -->
-    <div class="album-section">
-        <h2 class="album-heading">up coming album</h2> 
-        <div class="music-container">
-            <p style="color: #71717a; padding-left: 20px; font-style: italic;">New album coming soon. Stay tuned!</p>
+    <!-- Main Downward Scrolling Vault Container -->
+    <main class="discography-container" id="vaultContainer">
+        <!-- JavaScript loops through data structure and populates this dynamically -->
+    </main>
+
+    <!-- 🌟 GOOGLE ENGINE RICH TEXT LYRICS VAULT 🌟 -->
+    <section class="lyrics-vault">
+        <h2>Song Lyrics & Project Archives</h2>
+        
+        <!-- TRACK 1 -->
+        <div class="song-lyrics-block">
+            <h4>1. I'll Try</h4>
+            <div class="sleek-genre-badge">Alternative Rock / Melodic Synth</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "I'll Try" right here.
+                Line breaks are kept automatically.
+                
+                [Chorus]
+                Your chorus text goes here.
+            </p>
         </div>
-    </div>
 
-    <!-- Bottom Tribute Line -->
-    <div class="footer-tribute">
-        Tribute : Elvis, Desmond, fio, stephhy, yvi, Crankson and Caroline from Ayitey | suno production 
-    </div>
+        <!-- TRACK 2 -->
+        <div class="song-lyrics-block">
+            <h4>2. I'm Suffocating</h4>
+            <div class="sleek-genre-badge">Cinematic Pop / Electronic</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "I'm Suffocating" right here.
+            </p>
+        </div>
 
+                <!-- TRACK 3 -->
+        <div class="song-lyrics-block">
+            <h4>3. I Repent</h4>
+            <div class="sleek-genre-badge">Gospel / Orchestral Soul</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "I Repent" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 4 -->
+        <div class="song-lyrics-block">
+            <h4>4. I Won't Lose It</h4>
+            <div class="sleek-genre-badge">Modern Hip Hop / Trap</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "I Won't Lose It" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 5 -->
+        <div class="song-lyrics-block">
+            <h4>5. On Holidays (feat. Caro)</h4>
+            <div class="sleek-genre-badge">Afrobeats / Summer Dance</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "On Holidays" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 6 -->
+        <div class="song-lyrics-block">
+            <h4>6. Petite Voleur (Remix)</h4>
+            <div class="sleek-genre-badge">French Pop / Deep House</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "Petite Voleur" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 7 -->
+        <div class="song-lyrics-block">
+            <h4>7. Something Wild</h4>
+            <div class="sleek-genre-badge">Indie Folk / Acoustic Rock</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "Something Wild" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 8 -->
+        <div class="song-lyrics-block">
+            <h4>8. We Rolling (Drill)</h4>
+            <div class="sleek-genre-badge">UK Drill / Grime</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "We Rolling" right here.
+            </p>
+        </div>
+
+        <!-- TRACK 9 -->
+        <div class="song-lyrics-block">
+            <h4>9. Winning It</h4>
+            <div class="sleek-genre-badge">Epic Stadium Anthem / Synthwave</div>
+            <p>
+                [Verse 1]
+                Type your full lyrics for "Winning It" right here.
+            </p>
+        </div>
+    </section>
+
+    <!-- Structural Footer Asset -->
+    <footer>
+        Tribute : Elvis, Desmond, yvii, stephhy, Crankson and Caroline &bull; Powered by Suno Digital Productions.
+    </footer>
+
+    <!-- JAVASCRIPT OBJECT ROUTER AND AUDIO MANAGER -->
+    <script>
+        // Central Repository holding your exact requested tracks vertically
+        const discographyData = [
+            {
+                id: "album-1",
+                title: "Mighty Track",
+                status: "Available Now",
+                bannerCover: "",
+                tracks: [
+                    { title: "I'll Try", artist: "Ak Power", src: "I'll-try_by_Ak-Power.mp3", cover: "images/cover1.jpg" },
+                    { title: "I'm Suffocating", artist: "Ak Power", src: "I'm-suffocating_by_Ak-Power.mp3", cover: "images/cover2.jpg" },
+                    { title: "I Repent", artist: "Ak Power", src: "I-Repent_by_Ak-Power.mp3", cover: "images/cover3.jpg" },
+                    { title: "I Won't Lose It", artist: "Ak Power", src: "I-won't-lose-it_by_Ak-Power.mp3", cover: "images/cover4.jpg" },
+                    { title: "On Holidays", artist: "Ak Power ft. Caro", src: "On-Holidays_by_Ak-Power_ft._Caro.mp3", cover: "images/cover5.jpg" },
+                    { title: "Petite Voleur (Remix)", artist: "Thanielan ft. Ak Power", src: "Petite-Voleur_by_Thanielan_ft._Ak-Power_remix.mp3", cover: "images/cover6.jpg" },
+                    { title: "Something Wild", artist: "Ak Power", src: "Something-Wild_by_Ak-Power.mp3", cover: "images/cover7.jpg" },
+                    { title: "We Rolling (Drill)", artist: "Ak Power", src: "We-Rolling-drill_by_Ak-Power.mp3", cover: "images/cover8.jpg" },
+                    { title: "Winning It", artist: "A.K Power", src: "Winning-it_by_A.K-Power.mp3", cover: "images/cover9.jpg" }
+                ]
+            },
+            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-3", title: "Neon Echoes", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-4", title: "Acoustic Gold", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-5", title: "Velocity Remixes", status: "Coming Soon", bannerCover: "", tracks: [] }
+        ];
+
+        const vaultContainer = document.getElementById('vaultContainer');
+
+        // Master function to render everything cascading downwards
+        function renderDiscography() {
+            discographyData.forEach(album => {
+                const albumWrapper = document.createElement('section');
+                albumWrapper.className = 'album-wrapper';
+                albumWrapper.id = album.id;
+
+                let tracksHTML = '';
+                if (album.tracks.length === 0) {
+                    tracksHTML = `<div class="empty-state"><h3>${album.title}</h3><p>${album.status}</p></div>`;
+                } else {
+                    tracksHTML = `
+                        <div class="album-header-banner">
+                            <div class="album-banner-art"></div>
+                            <div class="album-banner-details">
+                                <h2>${album.title}</h2>
+                                <span>${album.status}</span>
+                            </div>
+                        </div>
+                        <div class="music-grid">
+                    `;
+                    album.tracks.forEach(track => {
+                        tracksHTML += `
+                            <div class="track-card">
+                                <img src="${track.cover}" class="album-art" alt="${track.title} Cover">
+                                <div class="track-info">
+                                    <h3>${track.title}</h3>
+                                    <p>${track.artist}</p>
+                                </div>
+                                <audio controls src="${track.src}"></audio>
+                                <a href="${track.src}" download class="download-btn">Download Track</a>
+                            </div>
+                        `;
+                    });
+                    tracksHTML += `</div>`;
+                }
+                albumWrapper.innerHTML = tracksHTML;
+                vaultContainer.appendChild(albumWrapper);
+            });
+        }
+
+        // Initialize the renderer
+        renderDiscography();
+    </script>
 </body>
-</html>
+    </html>
