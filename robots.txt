@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap.xml: https://akpower3.github.io/A.KPower/
+Sitemap: https://akpower3.github.io/A.KPower/sitemap.xml
