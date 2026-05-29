@@ -954,18 +954,7 @@ Oh ooh ohh...
                 `;
 
                 let albumContentHTML = '';
-// Dropdown Bio Section:
-albumContentHTML += `
-    <details style="cursor: pointer; margin-bottom: 30px; background: #111; padding: 15px; border-radius: 8px; border: 1px solid #222;">
-        <summary style="font-weight: bold; color: #00ff88; font-size: 1.1rem; list-style: none;">
-            <span>👤 Read Artist Biography</span>
-        </summary>
-        <p style="margin-top: 12px; color: #ccc; line-height: 1.6; white-space: pre-line;">
-            ${artistBio}
-        </p>
-    </details>
-`;
-                
+                albumContentHTML= '';
                 if (album.tracks.length > 0) {
                     albumContentHTML = '<div class="music-grid">';
                     album.tracks.forEach(track => {
