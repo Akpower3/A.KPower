@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://github.io
+Sitemap: https://akpower3.github.io/A.KPower/
