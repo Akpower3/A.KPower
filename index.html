@@ -970,7 +970,7 @@ albumContentHTML += `
     </details>
 `;
                 if (album.tracks.length > 0) {
-                    albumContentHTML = '<div class="music-grid">';
+                    albumContentHTML += '<div class="music-grid">';
                     album.tracks.forEach(track => {
                         albumContentHTML += `
                             <div class="track-card">
