@@ -258,7 +258,7 @@
                 id: "album-1",
                 title: "Mighty Track",
                 status: "Available Now",
-                bannerCover: "images/",
+                bannerCover: "images/cover0.jpg",
                 tracks: [
                     { 
                         title: "Winning It", 
@@ -886,7 +886,7 @@ Oh ooh ohh...
                     }
                 ]
             },
-            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "", tracks: [] }
+            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "./images/coveri.jpg", tracks: [] }
         ];
 
         const vaultContainer = document.getElementById('vaultContainer');
@@ -902,7 +902,7 @@ Oh ooh ohh...
                 
                 let albumHeaderHTML = `
                     <div class="album-header-banner">
-                        <img class="album-banner-art" src="images/cover0.jpg" alt="${album.title} Cover">
+                        <img class="album-banner-art" src="${album.bannerCover}" alt="${album.title} Cover">
                         <div class="album-banner-details">
                             <h2>${album.title}</h2>
                             <span>${album.status}</span>
