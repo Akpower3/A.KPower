@@ -612,6 +612,174 @@ oh oh oh oh
                 const trackCard = audio.closest('.track-card');
 
                 audio.addEventListener('play', () => {
+                     <!-- Structural Footer Asset -->
+    <footer>
+        Tribute to Crankson and Caroline &bull; Powered by Premium Digital Infrastructure
+    </footer>
+
+    <!-- JAVASCRIPT OBJECT ROUTER AND AUDIO MANAGER -->
+    <script>
+        // Central Repository containing tracks, images, and lyrics matched to your exact requested order
+        const discographyData = [
+            {
+                id: "album-1",
+                title: "Mighty Track",
+                status: "Available Now",
+                bannerCover: "images/cover1.jpg",
+                tracks: [
+                    { 
+                        title: "Winning It", 
+                        artist: "A.K Power", 
+                        src: "Winning-it_by_A.K-Power.mp3", 
+                        cover: "images/cover1.jpg",
+                        genre: "Epic Stadium Anthem / Synthwave",
+                        lyrics: `[Verse 1]\nType your full lyrics for "Winning It" right here.\nLine breaks are kept automatically.\n\n[Chorus]\nYour chorus text goes here.`
+                    },
+                    { 
+                        title: "I Repent", 
+                        artist: "Ak Power", 
+                        src: "I-Repent_by_Ak-Power.mp3", 
+                        cover: "images/cover2.jpg",
+                        genre: "Gospel / Orchestral Soul",
+                        lyrics: `[Verse 1]\nType your full lyrics for "I Repent" right here.`
+                    },
+                    { 
+                        title: "I'll Try", 
+                        artist: "Ak Power", 
+                        src: "I'll-try_by_Ak-Power.mp3", 
+                        cover: "images/cover3.jpg",
+                        genre: "Alternative Rock / Melodic Synth",
+                        lyrics: `[Verse 1]\nType your full lyrics for "I'll Try" right here.`
+                    },
+                    { 
+                        title: "I Won't Lose It", 
+                        artist: "Ak Power", 
+                        src: "I-won't-lose-it_by_Ak-Power.mp3", 
+                        cover: "images/cover4.jpg",
+                        genre: "Modern Hip Hop / Trap",
+                        lyrics: `[Verse 1]\nType your full lyrics for "I Won't Lose It" right here.`
+                    },
+                    { 
+                        title: "I'm Suffocating", 
+                        artist: "Ak Power", 
+                        src: "I'm-suffocating_by_Ak-Power.mp3", 
+                        cover: "images/cover5.jpg",
+                        genre: "Cinematic Pop / Electronic",
+                        lyrics: `[Verse 1]\nType your full lyrics for "I'm Suffocating" right here.`
+                    },
+                    { 
+                        title: "Petite Voleur (Remix)", 
+                        artist: "Thanielan ft. Ak Power", 
+                        src: "Petite-Voleur_by_Thanielan_ft._Ak-Power_remix.mp3", 
+                        cover: "images/cover6.jpg",
+                        genre: "French Pop / Deep House",
+                        lyrics: `[Verse 1]\nType your full lyrics for "Petite Voleur" right here.`
+                    },
+                    { 
+                        title: "On Holidays", 
+                        artist: "Ak Power ft. Caro", 
+                        src: "On-Holidays_by_Ak-Power_ft._Caro.mp3", 
+                        cover: "images/cover7.jpg",
+                        genre: "Afrobeats / Summer Dance",
+                        lyrics: `[Verse 1]\nType your full lyrics for "On Holidays" right here.`
+                    },
+                    { 
+                        title: "Something Wild", 
+                        artist: "Ak Power", 
+                        src: "Something-Wild_by_Ak-Power.mp3", 
+                        cover: "images/cover8.jpg",
+                        genre: "Indie Folk / Acoustic Rock",
+                        lyrics: `[Verse 1]\nType your full lyrics for "Something Wild" right here.`
+                    },
+                    { 
+                        title: "We Rolling (Drill)", 
+                        artist: "Ak Power", 
+                        src: "We-Rolling-drill_by_Ak-Power.mp3", 
+                        cover: "images/cover9.jpg",
+                        genre: "UK Drill / Grime",
+                        lyrics: `[Verse 1]\nType your full lyrics for "We Rolling" right here.`
+                    }
+                ]
+            },
+            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-3", title: "Neon Echoes", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-4", title: "Acoustic Gold", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-5", title: "Velocity Remixes", status: "Coming Soon", bannerCover: "", tracks: [] }
+        ];
+
+        const vaultContainer = document.getElementById('vaultContainer');
+
+        // Master function to render everything cascading downwards
+        function renderDiscography() {
+            discographyData.forEach(album => {
+                const albumWrapper = document.createElement('section');
+                albumWrapper.classList.add('album-wrapper');
+                albumWrapper.id = album.id;
+
+                const bannerCoverSrc = album.bannerCover || 'data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="80" height="80" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111827"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="%234b5563" font-size="14" font-family="sans-serif">🔒</text></svg>';
+                
+                let albumHeaderHTML = `
+                    <div class="album-header-banner">
+                        <img class="album-banner-art" src="${bannerCoverSrc}" alt="${album.title} Cover">
+                        <div class="album-banner-details">
+                            <h2>${album.title}</h2>
+                            <span>${album.status}</span>
+                        </div>
+                    </div>
+                `;
+
+                let albumContentHTML = '';
+                if (album.tracks.length > 0) {
+                    albumContentHTML = '<div class="music-grid">';
+                    album.tracks.forEach(track => {
+                        albumContentHTML += `
+                            <div class="track-card">
+                                <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='%230f172a';">
+                                <div class="track-info">
+                                    <h3>${track.title}</h3>
+                                    <p style="margin-bottom: 5px;">${track.artist}</p>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">${track.genre}</div>
+                                </div>
+                                <audio controls src="${track.src}" preload="none"></audio>
+                                <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>
+                                
+                                <!-- Integrated Lyrics Dropdown inside the Card -->
+                                <details style="cursor: pointer; outline: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 14px;">
+                                    <summary style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                                        <span>View Lyrics</span>
+                                        <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
+                                    </summary>
+                                    <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
+                                        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
+                                    </div>
+                                </details>
+                            </div>
+                        `;
+                    });
+                    albumContentHTML += '</div>';
+                } else {
+                    albumContentHTML = `
+                        <div class="empty-state">
+                            <h3>Tracks are currently locked</h3>
+                            <p>Check back later for exclusive access to this production masterwork.</p>
+                        </div>
+                    `;
+                }
+
+                albumWrapper.innerHTML = albumHeaderHTML + albumContentHTML;
+                vaultContainer.appendChild(albumWrapper);
+            });
+
+            setupAudioControls();
+        }
+
+        function setupAudioControls() {
+            const allAudios = document.querySelectorAll('audio');
+
+            allAudios.forEach(audio => {
+                const trackCard = audio.closest('.track-card');
+
+                audio.addEventListener('play', () => {
                     allAudios.forEach(otherAudio => {
                         if (otherAudio !== audio) {
                             otherAudio.pause();
@@ -626,12 +794,9 @@ oh oh oh oh
                 });
 
                 audio.addEventListener('ended', () => {
-                    trackCard.classList.remove('playing');
-                });
-            });
-        }
 
-        document.addEventListener('DOMContentLoaded', renderDiscography);
+                    trackCard.classList.remove('playing');});});}document.addEventListener('DOMContentLoaded', renderDiscography);
+
     </script>
 </body>
 </html>
