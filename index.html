@@ -210,6 +210,63 @@
             font-size: 1.3rem;
         }
 
+        /* Premium Lyrics Vault Styles */
+        .lyrics-vault {
+            max-width: 1100px;
+            margin: 80px auto 0 auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
+            border-radius: 28px;
+            padding: 30px;
+        }
+
+        .lyrics-vault h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 0 25px 0;
+            color: #ffffff;
+            letter-spacing: -0.02em;
+        }
+
+        .song-lyrics-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 15px;
+            padding: 20px;
+            transition: border-color 0.3s ease;
+        }
+
+        .song-lyrics-block:hover {
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .song-lyrics-block h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            color: #ffffff;
+        }
+
+        .sleek-genre-badge {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .song-lyrics-block p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            white-space: pre-line; /* Keeps your formatting and line breaks intact */
+        }
+
+        /* Interactive Arrow Mechanics */
+        details summary::-webkit-details-marker { display: none; }
+        details summary { list-style: none; }
+        details[open] .arrow-icon { transform: rotate(180deg); }
+
         /* Bottom Minimalist Footer */
         footer {
             margin-top: 120px;
@@ -219,51 +276,6 @@
             font-size: 0.95rem;
             letter-spacing: 0.05em;
             font-style: italic;
-        }
-
-        /* ADVANCED LYRICS VAULT SYSTEM */
-        .lyrics-vault {
-            max-width: 1100px;
-            margin: 80px auto 0 auto;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid var(--border-color);
-            border-radius: 28px;
-            padding: 40px;
-        }
-        .lyrics-vault h2 {
-            font-size: 2rem;
-            margin-bottom: 35px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 12px;
-            background: linear-gradient(135deg, #ffffff, #93c5fd);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-        }
-        .song-lyrics-block {
-            margin-bottom: 45px;
-        }
-        .song-lyrics-block h4 {
-            color: #ffffff;
-            font-size: 1.35rem;
-            margin: 0 0 4px 0;
-            font-weight: 600;
-        }
-        .sleek-genre-badge {
-            font-size: 0.8rem;
-            color: var(--accent-yellow);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 600;
-            margin-bottom: 14px;
-        }
-        .song-lyrics-block p {
-            color: var(--text-muted);
-            white-space: pre-line;
-            line-height: 1.6;
-            margin: 0;
-            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -283,108 +295,190 @@
         <!-- JavaScript loops through data structure and populates this dynamically -->
     </main>
 
-    <!-- 🌟 GOOGLE ENGINE RICH TEXT LYRICS VAULT 🌟 -->
+    <!-- 🌟 GOOGLE ENGINE RICH TEXT LYRICS VAULT (CLICK TO EXPAND) 🌟 -->
     <section class="lyrics-vault">
         <h2>Song Lyrics & Project Archives</h2>
         
         <!-- TRACK 1 -->
         <div class="song-lyrics-block">
-            <h4>1. I'll Try</h4>
-            <div class="sleek-genre-badge">Alternative Rock / Melodic Synth</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "I'll Try" right here.
-                Line breaks are kept automatically.
-                
-                [Chorus]
-                Your chorus text goes here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>1. I'll Try</h4>
+                        <div class="sleek-genre-badge">Alternative Rock / Melodic Synth</div>
+                    </div>
+                    <!-- Custom Arrow Indicator -->
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow); transition: transform 0.2s;">▼</span>
+                                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "I'll Try" right here.
+                        Line breaks are kept automatically.
+                        
+                        [Chorus]
+                        Your chorus text goes here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 2 -->
         <div class="song-lyrics-block">
-            <h4>2. I'm Suffocating</h4>
-            <div class="sleek-genre-badge">Cinematic Pop / Electronic</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "I'm Suffocating" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>2. I'm Suffocating</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Cinematic Pop / Electronic</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "I'm Suffocating" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
-                <!-- TRACK 3 -->
+        <!-- TRACK 3 -->
         <div class="song-lyrics-block">
-            <h4>3. I Repent</h4>
-            <div class="sleek-genre-badge">Gospel / Orchestral Soul</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "I Repent" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>3. I Repent</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Gospel / Orchestral Soul</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "I Repent" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 4 -->
         <div class="song-lyrics-block">
-            <h4>4. I Won't Lose It</h4>
-            <div class="sleek-genre-badge">Modern Hip Hop / Trap</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "I Won't Lose It" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>4. I Won't Lose It</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Modern Hip Hop / Trap</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "I Won't Lose It" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 5 -->
         <div class="song-lyrics-block">
-            <h4>5. On Holidays (feat. Caro)</h4>
-            <div class="sleek-genre-badge">Afrobeats / Summer Dance</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "On Holidays" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>5. On Holidays (feat. Caro)</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Afrobeats / Summer Dance</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "On Holidays" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 6 -->
         <div class="song-lyrics-block">
-            <h4>6. Petite Voleur (Remix)</h4>
-            <div class="sleek-genre-badge">French Pop / Deep House</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "Petite Voleur" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>6. Petite Voleur (Remix)</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">French Pop / Deep House</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "Petite Voleur" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 7 -->
         <div class="song-lyrics-block">
-            <h4>7. Something Wild</h4>
-            <div class="sleek-genre-badge">Indie Folk / Acoustic Rock</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "Something Wild" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>7. Something Wild</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Indie Folk / Acoustic Rock</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "Something Wild" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 8 -->
         <div class="song-lyrics-block">
-            <h4>8. We Rolling (Drill)</h4>
-            <div class="sleek-genre-badge">UK Drill / Grime</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "We Rolling" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>8. We Rolling (Drill)</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">UK Drill / Grime</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "We Rolling" right here.
+                    </p>
+                </div>
+            </details>
         </div>
 
         <!-- TRACK 9 -->
         <div class="song-lyrics-block">
-            <h4>9. Winning It</h4>
-            <div class="sleek-genre-badge">Epic Stadium Anthem / Synthwave</div>
-            <p>
-                [Verse 1]
-                Type your full lyrics for "Winning It" right here.
-            </p>
+            <details style="cursor: pointer; outline: none;">
+                <summary style="list-style: none; display: flex; align-items: center; justify-content: space-between; font-weight: 600;">
+                    <div>
+                        <h4>9. Winning It</h4>
+                        <div class="sleek-genre-badge" style="margin-bottom: 0;">Epic Stadium Anthem / Synthwave</div>
+                    </div>
+                    <span class="arrow-icon" style="font-size: 1.2rem; color: var(--accent-yellow);">▼</span>
+                </summary>
+                <div style="margin-top: 20px; border-top: 1px solid var(--border-color); padding-top: 15px;">
+                    <p>
+                        [Verse 1]
+                        Type your full lyrics for "Winning It" right here.
+                    </p>
+                </div>
+            </details>
         </div>
     </section>
 
     <!-- Structural Footer Asset -->
     <footer>
-        Tribute : Elvis, Desmond, yvii, stephhy, Crankson and Caroline &bull; Powered by Suno Digital Productions.
+        Tribute to Crankson and Caroline &bull; Powered by Premium Digital Infrastructure
     </footer>
 
     <!-- JAVASCRIPT OBJECT ROUTER AND AUDIO MANAGER -->
@@ -395,7 +489,7 @@
                 id: "album-1",
                 title: "Mighty Track",
                 status: "Available Now",
-                bannerCover: "",
+                bannerCover: "images/cover1.jpg",
                 tracks: [
                     { title: "I'll Try", artist: "Ak Power", src: "I'll-try_by_Ak-Power.mp3", cover: "images/cover1.jpg" },
                     { title: "I'm Suffocating", artist: "Ak Power", src: "I'm-suffocating_by_Ak-Power.mp3", cover: "images/cover2.jpg" },
@@ -408,8 +502,10 @@
                     { title: "Winning It", artist: "A.K Power", src: "Winning-it_by_A.K-Power.mp3", cover: "images/cover9.png" }
                 ]
             },
-            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "", tracks: [] }
-            
+            { id: "album-2", title: "Project Horizon", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-3", title: "Neon Echoes", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-4", title: "Acoustic Gold", status: "Coming Soon", bannerCover: "", tracks: [] },
+            { id: "album-5", title: "Velocity Remixes", status: "Coming Soon", bannerCover: "", tracks: [] }
         ];
 
         const vaultContainer = document.getElementById('vaultContainer');
@@ -418,45 +514,85 @@
         function renderDiscography() {
             discographyData.forEach(album => {
                 const albumWrapper = document.createElement('section');
-                albumWrapper.className = 'album-wrapper';
+                albumWrapper.classList.add('album-wrapper');
                 albumWrapper.id = album.id;
 
-                let tracksHTML = '';
-                if (album.tracks.length === 0) {
-                    tracksHTML = `<div class="empty-state"><h3>${album.title}</h3><p>${album.status}</p></div>`;
-                } else {
-                    tracksHTML = `
-                        <div class="album-header-banner">
-                            <div class="album-banner-art"></div>
-                            <div class="album-banner-details">
-                                <h2>${album.title}</h2>
-                                <span>${album.status}</span>
-                            </div>
+                const bannerCoverSrc = album.bannerCover || 'data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="80" height="80" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111827"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="%234b5563" font-size="14" font-family="sans-serif">🔒</text></svg>';
+                
+                let albumHeaderHTML = `
+                    <div class="album-header-banner">
+                        <img class="album-banner-art" src="${bannerCoverSrc}" alt="${album.title} Cover">
+                        <div class="album-banner-details">
+                            <h2>${album.title}</h2>
+                            <span>${album.status}</span>
                         </div>
-                        <div class="music-grid">
-                    `;
+                    </div>
+                `;
+
+                let albumContentHTML = '';
+                if (album.tracks.length > 0) {
+                    albumContentHTML = '<div class="music-grid">';
                     album.tracks.forEach(track => {
-                        tracksHTML += `
+                        albumContentHTML += `
                             <div class="track-card">
-                                <img src="${track.cover}" class="album-art" alt="${track.title} Cover">
+                                <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='%230f172a';">
                                 <div class="track-info">
                                     <h3>${track.title}</h3>
                                     <p>${track.artist}</p>
                                 </div>
-                                <audio controls src="${track.src}"></audio>
-                                <a href="${track.src}" download class="download-btn">Download Track</a>
+                                <audio controls src="${track.src}" preload="none"></audio>
+                                <a href="${track.src}" download="${track.src}" class="download-btn">Download MP3</a>
                             </div>
                         `;
                     });
-                    tracksHTML += `</div>`;
+                    albumContentHTML += '</div>';
+                } else {
+                    albumContentHTML = `
+                        <div class="empty-state">
+                            <h3>Tracks are currently locked</h3>
+                            <p>Check back later for exclusive access to this production masterwork.</p>
+                        </div>
+                    `;
                 }
-                albumWrapper.innerHTML = tracksHTML;
+
+                albumWrapper.innerHTML = albumHeaderHTML + albumContentHTML;
                 vaultContainer.appendChild(albumWrapper);
+            });
+
+            setupAudioControls();
+        }
+
+        function setupAudioControls() {
+            const allAudios = document.querySelectorAll('audio');
+
+            allAudios.forEach(audio => {
+                const trackCard = audio.closest('.track-card');
+
+                audio.addEventListener('play', () => {
+                    allAudios.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                            otherAudio.closest('.track-card').classList.remove('playing');
+                        }
+                    });
+                    trackCard.classList.add('playing');
+                });
+
+                audio.addEventListener('pause', () => {
+                    trackCard.classList.remove('playing');
+                });
+
+                audio.addEventListener('ended', () => {
+                    trackCard.classList.remove('playing');
+                });
             });
         }
 
-        // Initialize the renderer
-        renderDiscography();
+        document.addEventListener('DOMContentLoaded', renderDiscography);
     </script>
 </body>
-    </html>
+</html>
+
+    
+            
+                        
