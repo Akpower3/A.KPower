@@ -124,8 +124,9 @@
 
         /* Clean Downward Music Grid System */
         .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            display: flex;              /* Changed from grid to flex for better stacking control */
+            flex-direction: column;     /* Forces cards to remain vertically stacked layout */
+            align-items: center;        /* Centers your wide vertical cards on screen */
             gap: 25px;
         }
 
@@ -142,6 +143,11 @@
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+
+            /* UPDATED SIZE PROPERTIES */
+            width: 100%;                /* Allows card to naturally take up available space */
+            max-width: 650px;           /* Gives the card a spacious width on desktop */
+            margin: 0 auto;             /* Perfectly centers each card horizontally */
         }
 
         .track-card:hover {
@@ -157,13 +163,15 @@
             background: rgba(245, 158, 11, 0.02);
         }
 
+        /* Fixed Square Image Configuration */
         .album-art {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: auto;               /* Prevents structural stretching */
+            aspect-ratio: 1 / 1;        /* Keeps artwork a perfect flawless square */
             background-color: #0f172a;
             border-radius: 16px;
             margin-bottom: 20px;
-            object-fit: cover;
+            object-fit: cover;          /* Crops cleanly with zero distortion */
             box-shadow: 0 12px 24px rgba(0,0,0,0.4);
         }
 
@@ -234,6 +242,7 @@
             letter-spacing: 0.05em;
             font-style: italic;
         }
+    
     </style>
 </head>
 <body>
