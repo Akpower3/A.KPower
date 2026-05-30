@@ -124,29 +124,32 @@
 
         /* Clean Downward Music Grid System */
         .music-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            display: flex;              /* Changed from grid to flex for better stacking control */
+            flex-direction: column;     /* Forces cards to remain vertically stacked layout */
+            align-items: center;        /* Centers your wide vertical cards on screen */
             gap: 25px;
         }
 
-        /* Premium Track Card Box */
+                /* Premium Track Card Box */
         .track-card {
             background: var(--bg-card);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--border-color);
-            padding: 24px;
+            padding: 28px;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            width: 100%;                
 
-            width: 90%;            /* Keeps it nicely sized on mobile screens */
-            max-width: 650px;      /* Increases the width cleanly on desktop screens */
-            margin: 30px auto;
+            /* INCREASED MAX WIDTH FOR A LARGER CARD EXPERIENCE */
+            max-width: 760px;           /* Changed from 650px to 760px */
+            margin: 0 auto;             /* Perfectly keeps it in the center */
         }
+        
 
         .track-card:hover {
             transform: translateY(-6px) scale(1.01);
@@ -161,13 +164,15 @@
             background: rgba(245, 158, 11, 0.02);
         }
 
+        /* Fixed Square Image Configuration */
         .album-art {
             width: 100%;
-            aspect-ratio: 1 / 1;
+            height: auto;               /* Prevents structural stretching */
+            aspect-ratio: 1 / 1;        /* Keeps artwork a perfect flawless square */
             background-color: #0f172a;
             border-radius: 16px;
             margin-bottom: 20px;
-            object-fit: cover;
+            object-fit: cover;          /* Crops cleanly with zero distortion */
             box-shadow: 0 12px 24px rgba(0,0,0,0.4);
         }
 
@@ -237,7 +242,7 @@
             font-size: 0.95rem;
             letter-spacing: 0.05em;
             font-style: italic;
-        }
+      } 
         
     </style>
 </head>
