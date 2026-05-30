@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://googletagmanager.com"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F39K7QWD2J"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -25,31 +25,15 @@
             --text-muted: #9ca3af;
         }
 
-        /* Premium Global Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-deep);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #1f2937;
-            border-radius: 5px;
-            border: 2px solid var(--bg-deep);
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #374151;
-        }
-
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-deep);
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.04) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.04) 0%, transparent 50%);
+                radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(245, 158, 11, 0.05) 0%, transparent 40%);
             color: var(--text-main);
             text-align: center;
-            padding: 80px 20px;
+            padding: 60px 20px;
             margin: 0;
             min-height: 100vh;
             letter-spacing: -0.01em;
@@ -58,15 +42,15 @@
         /* Luxury Header */
         header {
             max-width: 1100px;
-            margin: 0 auto 70px auto;
+            margin: 0 auto 60px auto;
         }
 
         h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin: 0 0 15px 0;
             letter-spacing: -0.03em;
-            background: linear-gradient(135deg, #ffffff 40%, #93c5fd 70%, #fcd34d 100%);
+            background: linear-gradient(135deg, #ffffff 30%, #93c5fd 70%, #fcd34d 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-transform: uppercase;
@@ -77,7 +61,6 @@
             font-size: 1.15rem;
             margin: 5px 0;
             font-weight: 400;
-            opacity: 0.85;
         }
 
         /* Container for the Downward Scrolling Architecture */
@@ -87,7 +70,7 @@
             text-align: left;
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 40px;
         }
 
         /* Individual Album Container Block */
@@ -95,13 +78,12 @@
             background: rgba(255, 255, 255, 0.01);
             border: 1px solid var(--border-color);
             border-radius: 28px;
-            padding: 35px;
-            transition: all 0.3s ease;
+            padding: 30px;
+            transition: border-color 0.3s ease;
         }
 
         .album-wrapper:focus-within, .album-wrapper:hover {
-            border-color: rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.015);
+            border-color: rgba(59, 130, 246, 0.2);
         }
 
         /* Album Header Banner inside the vertical layout */
@@ -109,7 +91,7 @@
             display: flex;
             align-items: center;
             gap: 25px;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 20px;
         }
@@ -122,11 +104,10 @@
             object-fit: cover;
             border: 1px solid rgba(255, 255, 255, 0.05);
             flex-shrink: 0;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
 
         .album-banner-details h2 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 700;
             margin: 0 0 5px 0;
             color: #ffffff;
@@ -134,96 +115,89 @@
         }
 
         .album-banner-details span {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent-yellow);
             text-transform: uppercase;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             font-weight: 600;
         }
 
         /* Clean Downward Music Grid System */
         .music-grid {
-            display: flex;              
-            flex-direction: column;     
-            align-items: center;        
-            gap: 30px;
+            display: flex;              /* Changed from grid to flex for better stacking control */
+            flex-direction: column;     /* Forces cards to remain vertically stacked layout */
+            align-items: center;        /* Centers your wide vertical cards on screen */
+            gap: 25px;
         }
 
         /* Premium Track Card Box */
         .track-card {
             background: var(--bg-card);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            padding: 28px;
+            padding: 24px;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            width: 100%;                
-            max-width: 650px;           
-            margin: 0 auto;             
+
+            /* UPDATED SIZE PROPERTIES */
+            width: 100%;                /* Allows card to naturally take up available space */
+            max-width: 650px;           /* Gives the card a spacious width on desktop */
+            margin: 0 auto;             /* Perfectly centers each card horizontally */
         }
 
-        /* Smooth Interactive Ambient Hover Glow */
         .track-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(59, 130, 246, 0.05);
-            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 30px 60px rgba(59, 130, 246, 0.12);
+            border-color: rgba(59, 130, 246, 0.3);
         }
 
         /* Highlight the active card playing audio */
         .track-card.playing {
             border-color: var(--accent-yellow) !important;
-            box-shadow: 0 30px 60px rgba(245, 158, 11, 0.1) !important;
-            background: rgba(245, 158, 11, 0.01);
+            box-shadow: 0 30px 60px rgba(245, 158, 11, 0.12) !important;
+            background: rgba(245, 158, 11, 0.02);
         }
 
-        /* Fixed Square Image Configuration with Deep Shadow */
+        /* Fixed Square Image Configuration */
         .album-art {
             width: 100%;
-            height: auto;               
-            aspect-ratio: 1 / 1;        
+            height: auto;               /* Prevents structural stretching */
+            aspect-ratio: 1 / 1;        /* Keeps artwork a perfect flawless square */
             background-color: #0f172a;
-            border-radius: 18px;
-            margin-bottom: 25px;
-            object-fit: cover;          
-            box-shadow: 0 16px 32px rgba(0,0,0,0.6);
-            transition: transform 0.4s ease;
-        }
-
-        .track-card:hover .album-art {
-            transform: scale(1.015); /* Sleek micro-zoom on hover */
+            border-radius: 16px;
+            margin-bottom: 20px;
+            object-fit: cover;          /* Crops cleanly with zero distortion */
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
         }
 
         .track-info h3 {
-            margin: 0 0 6px 0;
-            font-size: 1.4rem;
-            font-weight: 700;
+            margin: 0 0 4px 0;
+            font-size: 1.25rem;
+            font-weight: 600;
             color: #ffffff;
-            letter-spacing: -0.01em;
         }
 
         .track-info p {
             margin: 0 0 20px 0;
             color: var(--text-muted);
             font-size: 0.95rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04); /* Elegant separator line */
-            padding-bottom: 15px;
         }
 
         audio {
             width: 100%;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         /* High-End Download Button Interaction */
         .download-btn {
             display: block;
             text-align: center;
-            padding: 16px;
+            padding: 14px;
             background: #ffffff;
             color: #000000;
             text-decoration: none;
@@ -232,14 +206,12 @@
             font-size: 0.95rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             margin-top: auto;
-            letter-spacing: 0.02em;
         }
 
         .download-btn:hover {
             background: var(--accent-yellow);
             color: #000000;
-            transform: scale(1.02);
-            box-shadow: 0 12px 30px rgba(245, 158, 11, 0.35);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
 
         /* Luxury Placeholder Box for Upcoming Albums */
@@ -262,16 +234,15 @@
 
         /* Bottom Minimalist Footer */
         footer {
-            margin-top: 140px;
-            padding: 50px 20px;
+            margin-top: 120px;
+            padding: 40px 20px;
             border-top: 1px solid var(--border-color);
             color: #4b5563;
             font-size: 0.95rem;
             letter-spacing: 0.05em;
             font-style: italic;
         }
-                
-    
+        
     </style>
 </head>
 <body>
