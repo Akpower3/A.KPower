@@ -194,26 +194,38 @@
             margin-bottom: 20px;
         }
 
-        /* High-End Download Button Interaction */
+                /* High-End Download Button Interaction */
         .download-btn {
             display: block;
             text-align: center;
-            padding: 14px;
-            background: #ffffff;
-            color: #000000;
+            padding: 16px;
+            
+            /* UPDATED TO LUXURY GOLD-YELLOW */
+            background: var(--accent-yellow);
+            color: #030712;             /* Clean dark text for contrast */
+            
             text-decoration: none;
             border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.95rem;
+            font-weight: 700;
+            font-size: 1rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             margin-top: auto;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;  /* Gives it a premium call-to-action look */
+
+            /* MAKES IT SLIGHTLY LONGER THAN THE AUDIO PLAYER */
+            margin-left: -12px;
+            margin-right: -12px;
         }
 
         .download-btn:hover {
-            background: var(--accent-yellow);
+            /* HOVER INVERSION FOR HIGH-END CONTRAST */
+            background: #ffffff;
             color: #000000;
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.25);
         }
+        
 
         /* Luxury Placeholder Box for Upcoming Albums */
         .empty-state {
