@@ -274,7 +274,40 @@
            font-weight: 600;
            letter-spacing: 0.5px;
        }
-         
+        .track-story-scrollbox {
+  max-height: 120px;
+  overflow-y: auto;
+  background: #111111;
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 15px;
+  border: 1px solid #222222;
+  text-align: left;
+}
+
+.track-story-scrollbox strong {
+  color: #fff9e6; /* Matches your warm pale yellow sub-header! */
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.track-story-scrollbox p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #cccccc;
+  margin: 0;
+}
+
+/* Custom sleek dark scrollbar */
+.track-story-scrollbox::-webkit-scrollbar {
+  width: 4px;
+}
+.track-story-scrollbox::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+        
     </style>
 </head>
 <body>
@@ -1118,6 +1151,11 @@ function renderDiscography() {
                     albumContentHTML += '<div class="music-grid">';
                     album.tracks.forEach(track => {
                         albumContentHTML += `
+                        <div class="track-story-scrollbox">
+                          <strong>Behind the Track:</strong>
+                            <p>${track.story || 'Story coming soon...'}</p>
+                         </div>
+
                             <div class="track-card">
                                 <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='#0f172a';">
                                 <div class="track-info">
