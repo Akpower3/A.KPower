@@ -267,8 +267,7 @@
            font-size: 1.1rem;
            line-height: 1.6;
     }
-        
-        
+         
     </style>
 </head>
 <body>
@@ -281,6 +280,12 @@
             <p>Listen and download premium assets freely.</p>
         </div>
     </header>
+    <section class="bio-container">
+    <p>Ak Power is a ghanaian based independent artist specializing mainly Afrobeats and in various other genres like Afrobeats, Afro-gospel, hip pop, and popband grime etc. Based on a relentless drive with raw lyrical delivery, his music captures real-life stories and authentic energy. 
+
+With tracks like 'We Rolling (Drill)', Winning it, I'm suffocating, I Repent, Something Wild, Night Sky, and more. Ak Power continues to carve out a distinct lane in the underground music scene, combining heavy basslines with sharp, impactful wordplay.
+         Explore this exclusive 10-song catalog featuring official lyrics and the unique backstories behind the music.</p>
+    </section>
     
     <!-- Main Downward Scrolling Vault Container -->
     <main class="discography-container" id="vaultContainer">
@@ -296,10 +301,7 @@
 
     <!-- JAVASCRIPT OBJECT ROUTER AND AUDIO MANAGER -->
     <script>
-        const artistBio = `Ak Power is a ghanaian based independent artist specializing mainly Afrobeats and in various other genres like Afrobeats, Afro-gospel, hip pop, and popband grime etc. Based on a relentless drive with raw lyrical delivery, his music captures real-life stories and authentic energy. 
 
-With tracks like 'We Rolling (Drill)', Winning it, I'm suffocating, I Repent, Something Wild, Night Sky, and more. Ak Power continues to carve out a distinct lane in the underground music scene, combining heavy basslines with sharp, impactful wordplay.`;
-        
         // Central Repository containing tracks, images, and lyrics matched to your exact requested order (covers 1-9)
         const discographyData = [
             {
@@ -1080,6 +1082,8 @@ it's kwesi Ayitey (Ayitey)
           ];
 
         const vaultContainer = document.getElementById('vaultContainer');
+        // Add this line right where your page initializes or renders content
+        
 
         // Master function to render everything cascading downwards
         function renderDiscography() {
@@ -1136,11 +1140,7 @@ albumContentHTML += `
                                         <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
                                     </div>
                                 </details>
-                                <!-- Behind the Lyrics Dropdown Box for Google -->
-<details style="cursor: pointer; margin-top: 10px; background: #1e1e1e; padding: 10px; border-radius: 5px;">
-    <summary style="font-weight: bold; color: #00ff88; list-style: none;">
-        <span>💡 Behind the Lyrics</span>
-    </summary>
+
     <div style="margin-top: 8px; color: #ccc; line-height: 1.5; white-space: pre-line;">
         ${track.story ? track.story : "Story coming soon!"}
     </div>
