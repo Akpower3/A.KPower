@@ -1155,10 +1155,6 @@ function renderDiscography() {
                                 <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='#0f172a';">
                                 <div class="track-info">
                                     <h3>${track.title}</h3>
-                                    <div class="track-story-scrollbox">
-                                      <strong>Behind the Track:</strong>
-                                        <p>${track.story || 'Story coming soon...'}</p>
-                                       </div>
                                     <p style="margin-bottom: 5px;">${track.artist}</p>
                                     <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">${track.genre}</div>
                                 </div>
@@ -1171,6 +1167,11 @@ function renderDiscography() {
                                         <span>View Lyrics</span>
                                         <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
                                     </summary>
+                                    <div class="track-story-scrollbox">
+  <strong>Behind the Track:</strong>
+  <p>${track.story || 'Story coming soon...'}</p>
+</div>
+
                                     <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
                                         <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
                                     </div>
