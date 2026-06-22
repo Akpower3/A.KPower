@@ -1119,7 +1119,8 @@ function renderDiscography() {
                     albumContentHTML += '<div class="music-grid">';
                     album.tracks.forEach(track => {
                         albumContentHTML += `       
-                            <div class="track-card">
+                            <div class="track-card" style="background: linear-gradient(135deg, #091a24 0%, #171c15 50%, #0c1d15 100%);">
+                            
                                 <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='#0f172a';">
                                 <div class="track-info">
                                     <h3>${track.title}</h3>
@@ -1136,6 +1137,7 @@ function renderDiscography() {
                                         <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
                                     </summary>
                                     <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
+                                    
            
                                     </div>
                                 </details>
