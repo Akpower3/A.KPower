@@ -1128,6 +1128,14 @@ function renderDiscography() {
                                 </div>
                                 <audio controls src="${track.src}" preload="none"></audio>
                                 <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>
+
+    <div style="margin-top: 20px; margin-bottom: 25px; text-align: left; padding: 0 15px;">
+        <h4 style="color: #fff9e6; margin-bottom: 8px; font-size: 1rem;">Behind the Track:</h4>
+        <p style="color: #cccccc; line-height: 1.6; font-size: 1rem; margin: 0;">
+            ${track.story || 'Story coming soon...'}
+        </p>
+    </div>
+
                                 
                                 
                                 <!-- Integrated Lyrics Dropdown inside the Card -->
