@@ -1136,10 +1136,9 @@ function renderDiscography() {
                                         <span>View Lyrics</span>
                                         <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
                                     </summary>
-                                    <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
-                                      ${track.lyrics || 'Lyrics not available for this track.'}
-           
-                                    </div>
+                                    <div style="margin-top: 10px; border-top: 1px solid var(--border); white-space: pre-line; padding: 12px 5px; line-height: 1.6; font-size: 0.95rem; color: #e0e0e0;">
+                                    ${track.lyrics || 'Lyrics not available for this track.'}
+                                  </div>
                                 </details>
     <div style="margin-top: 20px; margin-bottom: 25px; text-align: left; padding: 0 15px; max-height: 7.5em; overflow-y: auto;">
         <h4 style="color: #fff9e6; margin-bottom: 8px; font-size: 1rem;">Behind the Track:</h4>
