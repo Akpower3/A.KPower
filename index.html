@@ -256,7 +256,18 @@
             font-size: 0.95rem;
             letter-spacing: 0.05em;
             font-style: italic;
-      } 
+       } 
+        .bio-container {
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+       }
+        .bio-container p {
+           color: var(--text-muted);
+           font-size: 1.1rem;
+           line-height: 1.6;
+    }
+        
         
     </style>
 </head>
@@ -270,7 +281,7 @@
             <p>Listen and download premium assets freely.</p>
         </div>
     </header>
-
+    
     <!-- Main Downward Scrolling Vault Container -->
     <main class="discography-container" id="vaultContainer">
         <!-- JavaScript loops through data structure and populates this dynamically -->
@@ -285,9 +296,9 @@
 
     <!-- JAVASCRIPT OBJECT ROUTER AND AUDIO MANAGER -->
     <script>
-        const artistBio = `Ak Power is a ghanaian based independent artist specializing in various genres like Afrobeats, Afro-gospel, hip pop, and popband grime. Based on a relentless grind and raw lyrical delivery, his music captures real-life stories and authentic energy. 
+        const artistBio = `Ak Power is a ghanaian based independent artist specializing mainly Afrobeats and in various other genres like Afrobeats, Afro-gospel, hip pop, and popband grime etc. Based on a relentless drive with raw lyrical delivery, his music captures real-life stories and authentic energy. 
 
-With tracks like 'We Rolling (Drill)', Winning it, I'm suffocating, I Repent and more. Ak Power continues to carve out a distinct lane in the underground music scene, combining heavy basslines with sharp, impactful wordplay.`;
+With tracks like 'We Rolling (Drill)', Winning it, I'm suffocating, I Repent, Something Wild, Night Sky, and more. Ak Power continues to carve out a distinct lane in the underground music scene, combining heavy basslines with sharp, impactful wordplay.`;
         
         // Central Repository containing tracks, images, and lyrics matched to your exact requested order (covers 1-9)
         const discographyData = [
