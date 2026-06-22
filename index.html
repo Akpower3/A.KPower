@@ -1160,6 +1160,11 @@ function renderDiscography() {
                                 </div>
                                 <audio controls src="${track.src}" preload="none"></audio>
                                 <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>
+                                <div class="track-story-scrollbox">
+  <strong>Behind the Track:</strong>
+  <p>${track.story || 'Story coming soon...'}</p>
+</div>
+
                                 
                                 <!-- Integrated Lyrics Dropdown inside the Card -->
                                 <details style="cursor: pointer; outline: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 14px;">
@@ -1167,11 +1172,6 @@ function renderDiscography() {
                                         <span>View Lyrics</span>
                                         <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
                                     </summary>
-                                    <div class="track-story-scrollbox">
-  <strong>Behind the Track:</strong>
-  <p>${track.story || 'Story coming soon...'}</p>
-</div>
-
                                     <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
                                         <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
                                     </div>
