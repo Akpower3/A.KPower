@@ -1087,66 +1087,116 @@ it's kwesi Ayitey (Ayitey)
 
         // Master function to render everything cascading downward
 function renderDiscography() {
-    const vaultContainer = document.getElementById('vault-container'); // Make sure this matches your HTML ID
-    if (!vaultContainer) return;
+            discographyData.forEach(album => {
+                const albumWrapper = document.createElement('section');
+                albumWrapper.classList.add('album-wrapper');
+                albumWrapper.id = album.id;
 
-    vaultContainer.innerHTML = ''; // Clear previous content
-
-    discographyData.forEach(album => {
-        const albumWrapper = document.createElement('section');
-        albumWrapper.classList.add('album-wrapper');
-        albumWrapper.id = album.id;
-
-        // Fallback banner cover if missing
-        const bannerCoverSrc = album.bannerCover || 'data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="100%" height="100%"><rect width="100%" height="100%" fill="%23222"/></svg>';
-
-        // 1. Generate Album Header HTML
-        const albumHeaderHTML = `
-            <div class="album-header-banner">
-                <img class="album-banner-art" src="${bannerCoverSrc}" alt="${album.title}">
-                <div class="album-banner-details">
-                    <h2>${album.title}</h2>
-                    <span>${album.status}</span>
-                </div>
-            </div>
-        `;
-
-        // 2. Generate Biography / Details Section HTML
-        let albumContentHTML = `
-            <details style="cursor: pointer; margin-bottom: 30px; background: #111; padding: 15px;">
-                <summary style="font-weight: bold; color: #00ff88; font-size: 1.1rem; list-style: none;">
-                    <span>Read Artist Biography</span>
-                </summary>
-                <p style="margin-top: 12px; color: #ccc; line-height: 1.6; white-space: pre-line;">
-                    ${typeof artistBio !== 'undefined' ? artistBio : 'Biography data loading...'}
-                </p>
-            </details>
-        `;
-
-        // 3. Generate Track Grid HTML if tracks exist
-        if (album.tracks && album.tracks.length > 0) {
-            albumContentHTML += `<div class="music-grid">`;
-            
-            album.tracks.forEach(track => {
-                albumContentHTML += `
-                    <div class="track-card">
-                        <img class="album-art" src="${track.cover || ''}" alt="${track.title || 'Track Cover'}">
-                        <div class="track-info">
-                            <h3>${track.title}</h3>
-                            <p style="margin-bottom: 5px;">${track.artist}</p>
+                const bannerCoverSrc = album.bannerCover || 'data:image/svg+xml;utf8,<svg xmlns="http://w3.org" width="80" height="80" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23111827"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="%234b5563" font-size="14" font-family="sans-serif">🚫</text></svg>';
+                
+                let albumHeaderHTML = `
+                    <div class="album-header-banner">
+                        <img class="album-banner-art" src="${album.bannerCover}" alt="${album.title} Cover">
+                        <div class="album-banner-details">
+                            <h2>${album.title}</h2>
+                            <span>${album.status}</span>
                         </div>
                     </div>
                 `;
+
+                let albumContentHTML = '';
+                // Dropdown Bio Section:
+albumContentHTML += `
+    <details style="cursor: pointer; margin-bottom: 30px; background: #111; padding: 15px; border-radius: 8px; border: 1px solid #222;">
+        <summary style="font-weight: bold; color: #00ff88; font-size: 1.1rem; list-style: none;">
+            <span>👤 Read Artist Biography</span>
+        </summary>
+        <p style="margin-top: 12px; color: #ccc; line-height: 1.6; white-space: pre-line;">
+            ${typeof artistBio !== 'undefined' ? artistBio : "Biography data loading..."}
+        </p>
+    </details>
+`;
+                if (album.tracks.length > 0) {
+                    albumContentHTML += '<div class="music-grid">';
+                    album.tracks.forEach(track => {
+                        albumContentHTML += `
+                            <div class="track-card">
+                                <img class="album-art" src="${track.cover}" alt="${track.title} Artwork" onerror="this.style.backgroundColor='#0f172a';">
+                                <div class="track-info">
+                                    <h3>${track.title}</h3>
+                                    <p style="margin-bottom: 5px;">${track.artist}</p>
+                                    <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">${track.genre}</div>
+                                </div>
+                                <audio controls src="${track.src}" preload="none"></audio>
+                                <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>
+                                
+                                <!-- Integrated Lyrics Dropdown inside the Card -->
+                                <details style="cursor: pointer; outline: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 14px;">
+                                    <summary style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
+                                        <span>View Lyrics</span>
+                                        <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
+                                    </summary>
+                                    <div style="margin-top: 10px; border-top: 1px solid var(--border-color); padding-top: 10px; text-align: left;">
+                                        <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
+                                    </div>
+                                </details>
+
+    <div style="margin-top: 8px; color: #ccc; line-height: 1.5; white-space: pre-line;">
+        ${track.story ? track.story : "Story coming soon!"}
+    </div>
+</details>
+
+                            </div>
+                        `;
+                    });
+                    albumContentHTML += '</div>';
+                } else {
+                    albumContentHTML = `
+                        <div class="empty-state">
+                            <h3>Tracks are currently unavailable</h3>
+                            <p>Check back later for exclusive access to this production masterwork. Stay tuned for more!!!</p>
+                        </div>
+                    `;
+                }
+
+                albumWrapper.innerHTML = albumHeaderHTML + albumContentHTML;
+                vaultContainer.appendChild(albumWrapper);
             });
 
-            albumContentHTML += `</div>`; // Close music-grid
+            setupAudioControls();
         }
 
-        // 4. Combine and inject into the DOM wrapper
-        albumWrapper.innerHTML = albumHeaderHTML + albumContentHTML;
-        vaultContainer.appendChild(albumWrapper);
-    });
-}
+        function setupAudioControls() {
+            const allAudios = document.querySelectorAll('audio');
+
+            allAudios.forEach(audio => {
+                const trackCard = audio.closest('.track-card');
+
+                audio.addEventListener('play', () => {
+                    allAudios.forEach(otherAudio => {
+                        if (otherAudio !== audio) {
+                            otherAudio.pause();
+                            otherAudio.closest('.track-card').classList.remove('playing');
+                        }
+                    });
+                    trackCard.classList.add('playing');
+                });
+
+                audio.addEventListener('pause', () => {
+                    trackCard.classList.remove('playing');
+                });
+
+                audio.addEventListener('ended', () => {
+                    trackCard.classList.remove('playing');
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+    renderDiscography();
+    setupAudioControls();
+});
+        
         
     </script>
 </body>
