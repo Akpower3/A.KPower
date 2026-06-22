@@ -274,39 +274,7 @@
            font-weight: 600;
            letter-spacing: 0.5px;
        }
-        .track-story-scrollbox {
-  max-height: 120px;
-  overflow-y: auto;
-  background: #111111;
-  padding: 12px;
-  border-radius: 6px;
-  margin-top: 15px;
-  border: 1px solid #222222;
-  text-align: left;
-}
-
-.track-story-scrollbox strong {
-  color: #fff9e6; /* Matches your warm pale yellow sub-header! */
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.track-story-scrollbox p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #cccccc;
-  margin: 0;
-}
-
-/* Custom sleek dark scrollbar */
-.track-story-scrollbox::-webkit-scrollbar {
-  width: 4px;
-}
-.track-story-scrollbox::-webkit-scrollbar-thumb {
-  background: #333333;
-  border-radius: 10px;
-}
+        
         
     </style>
 </head>
@@ -1164,11 +1132,6 @@ function renderDiscography() {
                                 
                                 <!-- Integrated Lyrics Dropdown inside the Card -->
                                 <details style="cursor: pointer; outline: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 14px;">
-                                <div class="track-story-scrollbox">
-  <strong>Behind the Track:</strong>
-  <p>${track.story || 'Story coming soon...'}</p>
-</div>
-
                                     <summary style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);">
                                         <span>View Lyrics</span>
                                         <span class="arrow-icon" style="color: var(--accent-yellow); transition: transform 0.2s; font-size: 0.75rem;">▼</span>
