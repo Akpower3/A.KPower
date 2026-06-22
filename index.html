@@ -1127,16 +1127,7 @@ function renderDiscography() {
                                     <div style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px;">${track.genre}</div>
                                 </div>
                                 <audio controls src="${track.src}" preload="none"></audio>
-                                <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>
-
-    <div style="margin-top: 20px; margin-bottom: 25px; text-align: left; padding: 0 15px;">
-        <h4 style="color: #fff9e6; margin-bottom: 8px; font-size: 1rem;">Behind the Track:</h4>
-        <p style="color: #cccccc; line-height: 1.6; font-size: 1rem; margin: 0;">
-            ${track.story || 'Story coming soon...'}
-        </p>
-    </div>
-
-                                
+                                <a href="${track.src}" download="${track.src}" class="download-btn" style="margin-bottom: 15px;">Download MP3</a>       
                                 
                                 <!-- Integrated Lyrics Dropdown inside the Card -->
                                 <details style="cursor: pointer; outline: none; background: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 12px; border-radius: 14px;">
@@ -1148,13 +1139,13 @@ function renderDiscography() {
                                         <p style="color: var(--text-muted); line-height: 1.6; font-size: 0.9rem; white-space: pre-line; margin: 0;">${track.lyrics}</p>
                                     </div>
                                 </details>
-
-    <div style="margin-top: 8px; color: #ccc; line-height: 1.5; white-space: pre-line;">
-        ${track.story ? track.story : "Story coming soon!"}
+    <div style="margin-top: 20px; margin-bottom: 25px; text-align: left; padding: 0 15px;">
+        <h4 style="color: #fff9e6; margin-bottom: 8px; font-size: 1rem;">Behind the Track:</h4>
+        <p style="color: #cccccc; line-height: 1.6; font-size: 1rem; margin: 0;">
+            ${track.story || 'Story coming soon...'}
+        </p>
     </div>
-</details>
-
-                            </div>
+</div>
                         `;
                     });
                     albumContentHTML += '</div>';
